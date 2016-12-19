@@ -1,0 +1,101 @@
+<template name="residencialAc">
+	<div class="transitions-content">
+    <div class="container clima">
+    	<div class="row">
+        <header>
+          <h2 class="center-align"><img src="../images/residencial-ac-icon.png" alt="">Climatización Residencial</h2>
+        </header>
+
+        <form class="col s12 m10 offset-m1 ac-form">
+          <div class="row">
+               
+            <div class="col l6 s12">
+              <div class="input-field row ancholargo">
+                <p>Tamaño de la habitación (metros)</p>
+                <div class="col m4 s3">
+                  <input type="number" min="0" max="30" step="any" name="ancho" id="ancho" placeholder="Ancho">
+                </div>
+                <div class="col m4 s3">
+                  <input type="number" min="0" max="30" step="any" name="largo" id="largo" placeholder="Largo">
+                </div> 				   
+    				    <div class="col m4 s3">
+                  <input type="number" min="2" max="15" step="any" name="alto" id="alto" placeholder="Alto">
+                </div> 
+    				  </div>
+            </div>
+
+            <div class="input-field col l6 s12">
+              <input id="people" type="number" min="0" step="1" max="6" name="people" class="validate">
+              <label for="people">¿Cuántas personas utilizan esta habitación?</label>
+            </div>
+            <br>
+
+          </div>
+          
+          <div class="row">
+            <div class="col m6 s12">
+              <div class="input-field illumination">
+              	<p>¿Qué condición de luz natural tiene la habitación?</p>
+    				    <p>
+						      <input name="lightSelect" type="radio" id="light1" />
+						      <label for="light1">Sol directo</label>
+						    </p>
+						    <p>
+						      <input name="lightSelect" type="radio" id="light2" checked />
+						      <label for="light2">Normal</label>
+						    </p>
+						    <p>
+						      <input name="lightSelect" type="radio" id="light3" />
+						      <label for="light3">Poco sol</label>
+						    </p>
+    				  </div>
+            </div>
+            
+            <div class="col m6 s11">
+              <div class="input-field">
+              	<p>Tipo de inmueble</p>
+    				    <select name="building">
+    				      <option value="" disabled selected>- Elegir -</option>
+    				      <option>Casa</option>
+                  <option>Departamento</option>
+           
+    				    </select>
+    				  </div>
+            </div>
+
+          </div>
+          <hr>
+          <h5 class="form-title center-align">¿Dónde quiere que le enviemos su cotización?</h5>
+          <div class="row">
+            <div class="col s11 m6 input-field">
+              <input id="name" type="text" name="firstName" class="validate" required>
+              <label for="name">Nombre completo</label>
+            </div>
+            
+            <div class="col s11 m6 input-field">
+              <input id="phone" type="text" name="phone" class="validate" required>
+              <label for="phone">Teléfono</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col s12 m7 input-field">
+              <input id="email" type="email" name="email" class="validate" required>
+              <label for="email">Email donde enviaremos su cotización</label>
+            </div>
+           
+            <div class="col m5">
+              <p class="privacy">Nos tomamos muy en serio su privacidad y nunca compartiremos sus datos</p>
+            </div>
+          </div>
+          
+          <a href="{{pathFor 'clima'}}" class="hide-on-small-only btn waves-effect waves-light btn-large red darken-3" data-transition-out="roomUpOut" data-transition-in="roomUpIn">Volver</a>
+          <button class="hide-on-small-only btn waves-effect waves-light btn-large" data-transition-out="slideDownOut" data-transition-in="slideUpIn" type="submit" name="action">Enviar</button>
+
+          <button class="hide-on-med-and-up right btn waves-effect waves-light btn-large" data-transition-out="slideDownOut" data-transition-in="slideUpIn" type="submit" name="action">Enviar</button>
+          <a href="{{pathFor 'clima'}}" class="hide-on-med-and-up right btn waves-effect waves-light btn-large red darken-3" data-transition-out="roomUpOut" data-transition-in="roomUpIn">Volver</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,39 @@
+<template name="adminAcReport">
+	<div class="row">
+		<div class="col s6">
+			<h5>Nombre: {{name}}</h5>
+			<h5>Teléfono: {{phone}}</h5>
+			<h5>Email: {{email}}</h5>
+		</div>
+		<div class="col s6">
+			<h5>Fecha: {{formatDate}}</h5>
+			<h5>Número de caso: {{caseNumber}}</h5>
+			<h5>Número de IP: {{userIp}}</h5>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col s12">
+			<h5>Valor de instalación: {{instalation}} pesos</h5>
+			<h5>Valor de equipos: {{equipment}} pesos</h5>
+			<h5>Porcentaje de descuento: {{percentage}}</h5>
+			<h5>Valor total con descuento aplicado: {{totalDiscounted}} pesos</h5>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col s4">
+			<h5>Alto: {{alto}} metros</h5>
+			<h5>Ancho: {{ancho}} metros</h5>
+			<h5>Largo: {{largo}} metros</h5>
+			<h5>Cantidad de personas: {{people}}</h5>
+		</div>
+		<div class="col s4">
+			<h5>Cantidad de BTU: {{calculation}}</h5>
+			<h5>Tipo de inmueble: {{building}}</h5>
+		</div>
+		<div class="col s4">
+			<h4><a href="/cotizacion-climatizacion/{{caseNumber}}">LINK</a></h4>
+		</div>
+	</div>
+</template>

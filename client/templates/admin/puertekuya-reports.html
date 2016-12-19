@@ -1,0 +1,16 @@
+<template name="adminPuertekuyaReports">
+	<div class="row admin-reports">
+		<div class="col m10 offset-m1">
+			<h3>Cotizaciones</h3>
+			{{#each puertekuyaRecords}}
+			<ul class="collection">
+				<li class="collection-item"><a href="/adminPuertekuya/{{caseNumber}}">{{cName}}</a></li>
+				<li class="collection-item">Fecha: <strong>{{formatDateOngrid}}</strong></li>
+				<li class="collection-item">Número de caso: <strong>{{caseNumber}}</strong></li>
+			</ul>
+			{{/each}}
+		</div>
+		
+	</div>
+
+</template>

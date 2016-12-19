@@ -1,0 +1,20 @@
+<template name="adminPuertekuyaReport">
+	<div class="row">
+		<div class="col s6">
+			<h5>Nombre: {{cName}}</h5>
+			<h5>Teléfono: {{phone}}</h5>
+			<h5>Email: {{email}}</h5>
+		</div>
+		<div class="col s6">
+			<h5>Fecha: {{formatDate}}</h5>
+			<h5>Número de caso: {{caseNumber}}</h5>
+			<h5>Número de IP: {{userIp}}</h5>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		
+		<h4 class="center-align"><a href="/cotizacion-puertekuya-offgrid/{{caseNumber}}">LINK</a></h4>
+
+	</div>
+</template>

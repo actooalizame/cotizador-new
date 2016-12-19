@@ -1,0 +1,52 @@
+<template name="home">
+  
+  <div class="transitions-content home">
+    <div class="container">
+      <header class="row">
+        <h2 class="center-align">Cotizador de energía solar on-line</h2>
+        <h5 class="center-align">Nuestro sistema le entregará en menos de cinco minutos una cotización diseñada especialmente para usted</h5>
+        <hr>
+        <h4 class="center-align">¿Qué tipo de visitante es usted?</h4>
+      </header>
+  	  <div class="row home-container">
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="images/residencial.png">
+            </div>
+            <div class="center-align card-content">
+              <span class="card-title activator grey-text text-darken-4">Residencial </span>
+              <div class="card-action center-align">
+                <a href="{{pathFor 'residencial'}}" class="btn waves-effect waves-light" data-transition-out="scaleOut onTop" data-transition-in="scaleIn onTop">Elegir</a>
+              </div>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Residencial <i class="material-icons right">close</i></span>
+              <p>Energía solar para tu casa.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="images/industrial.png">
+            </div>
+            <div class="center-align card-content">
+              <span class="card-title activator grey-text text-darken-4">Industrial </span>
+              <div class="card-action center-align">
+                <a href="{{pathFor 'industrial'}}" class="btn waves-effect waves-light" data-transition-out="scaleOut" data-transition-in="scaleIn">Elegir</a>
+              </div>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Residencial <i class="material-icons right">close</i></span>
+              <p>Energía solar para tu empresa.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="watermark">
+        <p>ENEF-Energías Eficientes / solar@enef.cl / www.enef.cl / +569 8982 0321 / +569 8505 8186 / La Pastora 121 Of. 402, Las Condes.</p>
+      </div>
+    </div>
+  </div>
+</template>

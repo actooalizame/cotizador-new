@@ -1,0 +1,84 @@
+<template name="searcher">
+	<div class="transitions-content home searcher">
+    <div class="container">
+      <header class="row">
+        <div class="col s12">
+          <h3 class="form-title">Seleccione el tipo de cotización que busca</h3>
+        </div>
+      </header>
+      <hr>
+      <div class="row">
+      	<div class="col m4">
+      		<div class="card">
+            <div class="card-image">
+              <img src="images/on-grid.png">
+              
+            </div>
+            <div class="card-content">
+              <h6 class="center-align"><strong>Plan On-grid</strong></h6>
+            </div>
+            <div class="card-action center-align">
+              <a href="{{pathFor 'onGridSearch'}}" class="btn waves-effect waves-light" data-transition-out="roomDownOut" data-transition-in="roomDownIn">Elegir</a>
+            </div>
+          </div>
+      	</div>
+      	<div class="col m4">
+      		<div class="card">
+            <div class="card-image">
+              <img src="images/off-grid.png">
+              
+            </div>
+            <div class="card-content">
+              <h6 class="center-align"><strong>Plan Off-grid</strong></h6>
+            </div>
+            <div class="card-action center-align">
+              <a href="{{pathFor 'offGridSearch'}}" class="btn waves-effect waves-light" data-transition-out="roomDownOut" data-transition-in="roomDownIn">Elegir</a>
+            </div>
+          </div>
+      	</div>
+        <div class="col m4">
+          <div class="card">
+            <div class="card-image">
+              <img src="images/logo-puertekuya-mod.png">
+              
+            </div>
+            <div class="card-content">
+              <h6 class="center-align"><strong>Plan Condominio Puertekuya</strong></h6>
+            </div>
+            <div class="card-action center-align">
+              <a href="{{pathFor 'puerteOffGridSearch'}}" class="btn waves-effect waves-light" data-transition-out="roomDownOut" data-transition-in="roomDownIn">Elegir</a>
+            </div>
+          </div>
+        </div>
+      	<!--<div class="col l3 m6">
+      		<div class="card">
+            <div class="card-image">
+              <img src="images/agua-sanitaria-1.png">
+              
+            </div>
+            <div class="card-content">
+              <h6 class="center-align"><strong>Plan agua sanitaria</strong></h6>
+            </div>
+            <div class="card-action center-align">
+              <a href="{{pathFor 'waterReportSearch'}}" class="btn waves-effect waves-light" data-transition-out="roomDownOut" data-transition-in="roomDownIn">Elegir</a>
+            </div>
+          </div>
+      	</div>
+      	<div class="col l3 m6">
+      		<div class="card">
+            <div class="card-image">
+              <img src="images/calentar-piscina.png">
+              
+            </div>
+            <div class="card-content">
+              <h6 class="center-align"><strong>Plan termosolar piscina</strong></h6>
+            </div>
+            <div class="card-action center-align">
+              <a href="{{pathFor 'poolReportSearch'}}" class="btn waves-effect waves-light" data-transition-out="roomDownOut" data-transition-in="roomDownIn">Elegir</a>
+            </div>
+          </div>
+      	</div>-->
+      </div>
+    </div>
+  </div>
+</template>

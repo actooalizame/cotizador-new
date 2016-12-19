@@ -1,0 +1,18 @@
+<template name="navbarAc">
+  <nav class="grey darken-4 nav-ac">
+    <div class="nav-wrapper">
+      <a href="{{pathFor 'clima'}}" class="brand-logo" data-transition-out="scaleOut onTop" data-transition-in="scaleIn onTop"><img class="responsive-img" src="/images/logo-enef2.png" alt=""></a>
+      <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+      <ul class="right hide-on-med-and-down">
+        <li><a href="{{pathFor 'acSearch'}}" data-transition-out="scaleOut onTop" data-transition-in="scaleIn onTop">Mis Cotizaciones</a></li>
+        <li><a href="{{pathFor 'contactAc'}}" data-transition-out="slideDownOut onTop" data-transition-in="slideUpIn onTop">Contacto</a></li>
+        <li><a href="https://www.facebook.com/energiaseficientes?ref=ts&fref=ts" target="_blank"><i class="fa fa-facebook-official"></i></a></li>
+      </ul>
+      <ul class="side-nav" id="mobile-demo">
+        <li><a href="{{pathFor 'acSearch'}}">Mis Cotizaciones</a></li>
+        <li><a href="{{pathFor 'contactAc'}}">Contacto</a></li>
+        <li><a href="#"><i class="fa fa-facebook-official"></i></a></li>
+      </ul>
+    </div>
+  </nav>
+</template>

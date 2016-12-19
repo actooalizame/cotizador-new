@@ -1,0 +1,35 @@
+<template name="adminOngridReport">
+	<div class="row">
+		<div class="col s6">
+			<h5>Nombre: {{name}}</h5>
+			<h5>Teléfono: {{phone}}</h5>
+			<h5>Email: {{contactEmail}}</h5>
+		</div>
+		<div class="col s6">
+			<h5>Fecha: {{formatDate}}</h5>
+			<h5>Número de caso: {{caseNumber}}</h5>
+			<h5>Número de IP: {{userIp}}</h5>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col s6">
+			<h5>Monto Energía Base: {{acSpend}} pesos</h5>
+			<h5>Consumo mensual: {{montKwats}} KWh</h5>
+		</div>
+		<div class="col s6">
+			<h5>Valor de instalación: {{instalation}} pesos</h5>
+			<h5>Valor de equipos: {{equipment}} pesos</h5>
+		</div>
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col s6">
+			<h5>Zona: {{zone}}</h5>
+			<h5>Cantidad de paneles sugeridos: {{suggestedPanels}}</h5>
+		</div>
+		<div class="col s6">
+			<h4><a href="/cotizacion-ongrid/{{caseNumber}}">LINK</a></h4>
+		</div>
+	</div>
+</template>

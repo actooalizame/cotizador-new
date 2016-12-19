@@ -1,0 +1,35 @@
+<template name="adminReports">
+	<div class="row admin-reports">
+		<div class="col s4">
+			<h3>On Grid</h3>
+			{{#each onGridReports}}
+			<ul class="collection">
+				<li class="collection-item"><a href="/adminongrid/{{caseNumber}}">{{name}}</a></li>
+				<li class="collection-item">Fecha: <strong>{{formatDateOngrid}}</strong></li>
+				<li class="collection-item">Número de caso: <strong>{{caseNumber}}</strong></li>
+			</ul>
+			{{/each}}
+		</div>
+		<div class="col s4">
+			<h3>Off Grid</h3>
+			{{#each offGridReports}}
+			<ul class="collection">
+				<li class="collection-item"><a href="/adminoffgrid/{{caseNumber}}">{{cName}}</a></li>
+				<li class="collection-item">Fecha: <strong>{{formatDateOffgrid}}</strong></li>
+				<li class="collection-item">Número de caso: <strong>{{caseNumber}}</strong></li>
+			</ul>
+			{{/each}}
+		</div>
+		<div class="col s4">
+			<h3>Climatización</h3>
+			{{#each acReports}}
+			<ul class="collection">
+				<li class="collection-item"><a href="/adminclimatizacion/{{caseNumber}}">{{name}}</a></li>
+				<li class="collection-item">Fecha: <strong>{{formatDateAc}}</strong></li>
+				<li class="collection-item">Número de caso: <strong>{{caseNumber}}</strong></li>
+			</ul>
+			{{/each}}
+		</div>
+	</div>
+
+</template>

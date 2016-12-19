@@ -1,0 +1,47 @@
+<template name="electric-home">
+
+  <div class="transitions-content electrica">
+    <div class="container">
+    	<header class="row">
+    		<h2 class="center-align"><img src="../images/energia-electrica-icon.png" alt="">Paneles solares para  la energía de su casa</h2>
+    		<h5 class="center-align">¿Su casa se encuentra conectada  a la red eléctrica, o esta no tiene factibilidad de conectarse a la distribuidora?</h5>
+    	</header>
+      <div class="row">
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="../images/on-grid.png">
+            </div>
+            <div class="card-content center-align">
+              <span class="card-title activator grey-text text-darken-4">Sí, actualmente mi casa está conectada a la red eléctrica.</span>
+              <div class="card-action center-align">
+                <a href="{{pathFor 'onGridReport'}}" class="btn waves-effect waves-light" data-transition-out="roomDownOut" data-transition-in="roomDownIn">Elegir</a>
+              </div>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Instalación On-Grid <i class="material-icons right">close</i></span>
+              <p>Utilice la tecnología fotovoltaica para el ahorro de sus cuentas de luz. Acójase a la ley Net Billing, podrá descontar de su cuenta la energía generada durante el día incluso cuando usted no la consuma completamente.</p>
+            </div>
+          </div>
+        </div>
+        <div class="col s12 m6">
+          <div class="card">
+            <div class="card-image waves-effect waves-block waves-light">
+              <img class="activator" src="../images/off-grid.png">
+            </div>
+            <div class="card-content center-align">
+              <span class="card-title activator grey-text text-darken-4">No tengo posibilidad, mi casa se encuentra en un lugar aislado</span>
+              <div class="card-action center-align">
+                <a href="{{pathFor 'offGridReport'}}" class="btn waves-effect waves-light" data-transition-out="roomDownOut" data-transition-in="roomDownIn">Elegir</a>
+              </div>
+            </div>
+            <div class="card-reveal">
+              <span class="card-title grey-text text-darken-4">Instalación Off-Grid <i class="material-icons right">close</i></span>
+              <p>Obtenga energía limpia y sin interrupciones en lugares aislados gracias a este sistema de paneles solares con acumuladores de energía para su uso fuera de los horarios de generación solar.<br>Si usted ya tiene red eléctrica, este sistema no es recomendado para usted.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>

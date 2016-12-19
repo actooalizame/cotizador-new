@@ -1,0 +1,55 @@
+<template name="singleAcReport">
+	<div class="transitions-content">
+		<div class="container">
+			<div class="row single-ac">
+				
+				<div class="col s12">
+					<header>
+						<h3 class="center-align">Cotización personalizada de climatización residencial</h3>
+					</header>
+					<hr>
+					<div class="row">
+						<div class="col m4">
+							<h5>Nombre: <strong>{{name}}</strong></h5>
+							<h5>N° de Caso: <strong>{{caseNumber}}</strong></h5>
+							<h5>Cantidad de BTU: <strong>{{calculation}}</strong></h5>
+						</div>
+						<div class="col m8">
+							<h5>Valor de los equipos: <strong>{{equipment}} pesos + IVA</strong></h5>
+							<h5>Valor de instalación: <strong>{{instalation}} pesos + IVA</strong></h5>
+							<h5>Valor total con descuento del {{percentage}}: <strong>{{totalDiscounted}} pesos + IVA</strong></h5>
+						</div>
+					</div>
+					<hr>
+	
+					<div class="row">
+		        <h5 class="center-align">Descargue su cotización y el detalle de los equipos <br><br><a href="http://enef.cl/cotizaciones/cotizacion-AC(CAA{{pdfLead}}).pdf" class="btn waves-effect waves-light" download="Enef.pdf">Descargar PDF</a></h5>
+		      </div>
+		      <div class="row">
+		        <div class="col s12 {{hideHelped}}">
+		          <p class="center-align">¿Quiere que un ejecutivo lo contacte para asesorarlo en su proceso de compra? <i data-position="bottom" data-tooltip="Oprima ser contactado y un ejecutivo lo ayudara con sus dudas y requerimientos" class="tooltipped material-icons">live_help</i></p>
+		          <div class="row">
+		            <div class="col m2 offset-m4 offset-s3">
+		              <button class="btn waves-effect waves-light contact-me" type="button">Si</button>
+		            </div>
+		            <div class="col m2">
+		              <a href="http://enef.cl/landing/energia-solar.html" class="btn waves-effect waves-light red darken-3">No</a>
+		            </div>
+		          </div>
+		        </div>
+		        <div class="col s12 {{showHelpedText}}">
+		        	<h5 class="center-align orange-text accent-4">{{helpedText}}</h5>
+		        </div>
+		      </div>
+		      <div class="row">
+		      	<div id="watermark">
+			        <p>ENEF-Energías Eficientes / solar@enef.cl / www.enef.cl / +569 8982 0321 / +569 8505 8186 / La Pastora 121 Of. 402, Las Condes.</p>
+			      </div>
+		      </div>
+
+				</div>
+
+			</div>
+		</div>
+	</div>
+</template>

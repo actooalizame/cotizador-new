@@ -1,0 +1,90 @@
+<template name="water">
+	<div class="transitions-content water">
+    <div class="container">
+    	<header class="row">
+    		<h2 class="center-align"><img src="../images/agua-sanitaria-icon.png" alt="">Paneles solares para calentar agua sanitaria</h2>
+    		<h5 class="center-align">Indíquenos la ubicación de su casa y cuantas personas la habitan tiempo completo</h5>
+    	</header>
+      <div class="row">
+        <form class="col s12 m10 offset-m1 form-water">
+          <div class="row">
+            <div class="col m5 s11">
+              <div class="input-field">
+    				    <select name="zone">
+    				      <option value="" disabled selected>Ubicación</option>
+    				      <option>Región Metropolitana</option>
+                  <option>XV Arica y Parinacota</option>
+                  <option>I Tarapacá</option>
+                  <option>II Antofagasta</option>
+                  <option>III Atacama</option>
+                  <option>IV Coquimbo</option>
+                  <option>V Valparaíso</option>
+                  <option>VI O'Higgins</option>
+                  <option>VII Maule</option>
+                  <option>VIII Biobío</option>
+                  <option>IX La Araucanía</option>
+                  <option>XIV Los Ríos</option>
+                  <option>X Los Lagos</option>
+    				      <option>XI Aysén</option>
+    				      <option>XII Magallanes y Antártica</option>
+    				    </select>
+    				  </div>
+            </div>
+            <div class="col s1">
+              <i data-position="bottom" data-tooltip="Sus datos de ubicación son necesarios ya que el factor de irradiación solar cambia considerablemente de norte a sur." class="tooltipped material-icons">live_help</i>
+            </div>
+            <div class="col m5 s11">
+              <div class="input-field">
+    				    <select name="residents">
+    				      <option value="" disabled selected>N° de Habitantes</option>
+    				      <option>1</option>
+                  <option>2</option>
+                  <option>3</option>
+                  <option>4</option>
+                  <option>5</option>
+                  <option>6</option>
+                  <option>7</option>
+                  <option>8 o +</option>
+    				    </select>
+    				  </div>
+            </div>
+            <div class="col s1">
+              <i data-position="bottom" data-tooltip="Indíquenos por favor cuantas personas habitan tiempo completo en su casa" class="tooltipped material-icons">live_help</i>
+            </div>
+          </div>
+          <hr>
+          <h5 class="form-title center-align">¿Dónde quiere que le enviemos su cotización?</h5>
+          <div class="row">
+          	<div class="col s11 m6 input-field">
+              <input id="name" type="text" name="firstName" class="validate">
+              <label for="name">Nombre</label>
+            </div>
+            
+            <div class="col s11 m6 input-field">
+              <input id="phone" type="text" name="phone" class="validate">
+              <label for="phone">Teléfono (opcional)</label>
+            </div>
+           
+          </div>
+          <div class="row">
+            <div class="col s11 m7 input-field">
+              <input id="email" type="email" name="email" class="validate">
+              <label for="email">Email donde enviaremos su cotización</label>
+            </div>
+            
+            <div class="col m5">
+	          	<p class="privacy">Nos tomamos muy en serio su privacidad y nunca compartiremos sus datos</p>
+	          </div>
+          </div>
+          
+          
+          <a href="{{pathFor 'residencial'}}" class="hide-on-small-only btn waves-effect waves-light btn-large red darken-3" data-transition-out="roomUpOut" data-transition-in="roomUpIn">Volver</a>
+          <button class="hide-on-small-only btn waves-effect waves-light btn-large" type="submit" name="action">Enviar</button>
+
+          <button class="hide-on-med-and-up right btn waves-effect waves-light btn-large" type="submit" name="action">Enviar</button>
+          <a href="{{pathFor 'residencial'}}" class="hide-on-med-and-up right btn waves-effect waves-light btn-large red darken-3" data-transition-out="roomDownOut" data-transition-in="roomUpIn">Volver</a>
+        </form>
+      </div>
+    </div>
+  </div>
+</template>

@@ -1,0 +1,376 @@
+<template name="offGridReport">
+
+  <div id="wrapper" class="transitions-content">
+    <div class="row">
+      <div class="col s12">
+        <h5 class="center-align title">Completa esta tabla con todos los equipos eléctricos que utilizarás en tu casa</h5>
+      </div>
+    </div>
+    <form class="off-grid-form">
+      <div class="row form-container">
+        <div class="col m12 l6">
+          <table class="centered">
+            <thead>
+              <tr>
+                <th>Equipo</th>
+                <th class="brand-color">Unidades</th>
+                <th>Potencia (W)</th>
+                <th>Horas uso diario</th>
+                <th>Energia (Wh/dia)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="ainc">
+                <td>Ampolleta Incandescente</td>
+                <td>
+                  <input type="number" min="0" name="items" id="ainc" value="0">
+                </td>
+                <td>
+                  <input type="number" min="0" name="power" id="ainc" value="60">
+                </td>
+                <td>
+                  <input type="number"  min="0" max="24" step="any" name="hours" id="ainc" value="4">
+                </td>
+                
+                <td>
+                  {{aincTotal}}
+                </td>
+              </tr>
+              <tr class="aef">
+                <td>Ampolleta Eficiente</td>
+                <td>
+                  <input type="number" min="0" name="items" id="aef" value="0">
+                </td>
+                <td>
+                  <input type="number" min="0" name="power" id="aef" value="18">
+                </td>
+                <td>
+                  <input type="number"  min="0" max="24" step="any" name="hours" id="aef" value="4">
+                </td>
+                 
+                <td>
+                  {{aefTotal}}
+                </td>
+              </tr>
+              <tr class="tfluo">
+                <td>Tubo Fluorescente</td>
+                <td>
+                  <input type="number" min="0" name="items" id="tfluo" value="0">
+                </td>
+                <td>
+                  <input type="number" min="0" name="power" id="tfluo" value="50">
+                </td>
+                <td>
+                  <input type="number"  min="0" max="24" step="any" name="hours" id="tfluo" value="4">
+                </td>
+                
+                <td>
+                  {{tfluoTotal}}
+                </td>
+              </tr>
+              <tr class="led">
+                <td>Ampolleta LED</td>
+                <td>
+                  <input type="number" min="0" name="items" id="led" value="0">
+                </td>
+                <td>
+                  <input type="number" min="0" name="power" id="led" value="6">
+                </td>
+                <td>
+                  <input type="number"  min="0" max="24" step="any" name="hours" id="led" value="4">
+                </td>
+                <td>
+                  {{ledTotal}}
+                </td>
+              </tr>
+              <tr class="compu">
+                <td>Computador</td>
+                <td>
+                  <input type="number" min="0" name="items" id="compu" value="0">
+                </td>
+                <td>
+                  <input type="number" min="0" name="power" id="compu" value="300">
+                </td>
+                <td>
+                  <input type="number"  min="0" max="24" step="any" name="hours" id="compu" value="3">
+                </td>
+                <td>
+                  {{compuTotal}}
+                </td>
+              </tr>
+              <tr class="note">
+                <td>Notebook</td>
+                <td>
+                  <input type="number" min="0" name="items" id="note" value="0">
+                </td>
+                <td>
+                  <input type="number" min="0" name="power" id="note" value="250">
+                </td>
+                <td>
+                  <input type="number"  min="0" max="24" step="any" name="hours" id="note" value="3">
+                </td>
+                <td>
+                  {{noteTotal}}
+                </td>
+              </tr>
+              <tr class="tv">
+                <td>TV</td>
+                <td>
+                  <input type="number" min="0" name="items" id="tv" value="0">
+                </td>
+                <td>
+                  <input type="number" min="0" name="power" id="tv" value="75">
+                </td>
+                <td>
+                  <input type="number"  min="0" max="24" step="any" name="hours" id="tv" value="3">
+                </td>
+                <td>
+                  {{TvTotal}}
+                </td>
+              </tr>
+              <tr class="other1">
+                <td>
+                  <input type="text" name="name" id="other1" placeholder="Otro">
+                </td>
+                <td>
+                  <input type="number" min="0" name="items" id="other1" value="0">
+                </td>
+                <td>
+                  <input type="number" min="0" name="power" id="other1" value="0">
+                </td>
+                <td>
+                  <input type="number"  min="0" max="24" step="any" name="hours" id="other1" value="0">
+                </td>
+                <td>
+                  {{other1Total}}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <div class="col m12 l6">
+          <table class="centered">
+            <thead>
+              <tr>
+                <th>Equipo</th>
+                <th class="brand-color">Unidades</th>
+                <th>Potencia (W)</th>
+                <th>Horas uso diario</th>
+                <th>Energia (Wh/dia)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="music">
+                <td>Equipo de Música</td>
+                <td>
+                  <input type="number" min="0" name="items" id="music" value="0">
+                </td>
+                <td>
+                  <input type="number" min="0" name="power" id="music" value="60">
+                </td>
+                <td>
+                  <input type="number"  min="0" max="24" step="any" name="hours" id="music" value="3">
+                </td>
+                <td>
+                  {{musicTotal}}
+                </td>
+              </tr>
+              <tr class="dvd">
+                <td>DVD / Bluray</td>
+                <td>
+                  <input type="number" min="0" name="items" id="dvd" value="0">
+                </td>
+                <td>
+                  <input type="number" min="0" name="power" id="dvd" value="50">
+                </td>
+                <td>
+                  <input type="number"  min="0" max="24" step="any" name="hours" id="dvd" value="3">
+                </td>
+                <td>
+                  {{dvdTotal}}
+                </td>
+              </tr>
+              <tr class="aspi">
+                <td>Decodificador / Router</td>
+                <td>
+                  <input type="number" min="0" name="items" id="aspi" value="0">
+                </td>
+                <td>
+                  <input type="number" min="0" name="power" id="aspi" value="20">
+                </td>
+                <td>
+                  <input type="number"  min="0" max="24" step="any" name="hours" id="aspi" value="24">
+                </td>
+                <td>
+                  {{aspiTotal}}
+                </td>
+              </tr>
+              <tr class="horno">
+                <td>Horno Eléctrico <i data-position="bottom" data-tooltip="Cuidado. Equipos de alta potencia pueden encarecer altamente su sistema solar." class="tooltipped red-text text-darken-2 tiny material-icons">info_outline</i></td>
+                <td>
+                  <input type="number" min="0" name="items" id="horno" value="0">
+                </td>
+                <td>
+                  <input type="number" min="0" name="power" id="horno" value="1500">
+                </td>
+                <td>
+                  <input type="number"  min="0" max="24" step="any" name="hours" id="horno" value="0.4">
+                </td>
+                <td>
+                  {{hornoTotal}}
+                </td>
+              </tr>
+              <tr class="micro">
+                <td>H. Microondas <i data-position="bottom" data-tooltip="Cuidado. Equipos de alta potencia pueden encarecer altamente su sistema solar." class="tooltipped red-text text-darken-2 tiny material-icons">info_outline</i></td>
+                <td>
+                  <input type="number" min="0" name="items" id="micro" value="0">
+                </td>
+                <td>
+                  <input type="number" min="0" name="power" id="micro" value="1100">
+                </td>
+                <td>
+                  <input type="number"  min="0" max="24" step="any" name="hours" id="micro" value="0.3">
+                </td>
+                <td>
+                  {{microTotal}}
+                </td>
+              </tr>
+              <tr class="lava">
+                <td>Lavadora <i data-position="bottom" data-tooltip="Cuidado. Equipos de alta potencia pueden encarecer altamente su sistema solar." class="tooltipped red-text text-darken-2 tiny material-icons">info_outline</i></td>
+                <td>
+                  <input type="number" min="0" name="items" id="lava" value="0">
+                </td>
+                <td>
+                  <input type="number" min="0" name="power" id="lava" value="1200">
+                </td>
+                <td>
+                  <input type="number"  min="0" max="24" step="any" name="hours" id="lava" value="0.5">
+                </td>
+                <td>
+                  {{lavaTotal}}
+                </td>
+              </tr>
+              <tr class="refri">
+                <td>Refrigerador <i data-position="bottom" data-tooltip="Generalmente los refrigeradores indican el valor de KWh/mes de consumo." class="tooltipped red-text text-darken-2 tiny material-icons">info</i></td>
+                <td>
+                  <input type="number" min="0" name="items" id="refri" value="0">
+                </td>
+                <td class="rightAlg">
+                  <input type="number" min="2" name="power" step="any" id="refri" value="40"><span>KWh/mes</span>
+                </td>
+                <td>
+                  <input type="number"  min="0" max="24" name="hours" id="refri" value="24" disabled>
+                </td>
+                <td>
+                  {{refriTotal}}
+                </td>
+              </tr>
+              <!--<tr class="other2">
+                <td>
+                  <input type="text" name="name" id="other2" placeholder="Otro (2)">
+                </td>
+                <td>
+                  <input type="number" min="0" name="power" id="other2" value="0">
+                </td>
+                <td>
+                  <input type="number"  min="0" max="24" name="hours" id="other2" value="0">
+                </td>
+                <td>
+                  <input type="number" min="0" name="items" id="other2" value="0">
+                </td>
+                <td>
+                  {{other2Total}}
+                </td>
+              </tr>-->
+              <tr class="bomb">
+                <td>
+                  Bomba <i data-position="bottom" data-tooltip="Cuidado. Equipos de alta potencia pueden encarecer altamente su sistema solar." class="tooltipped red-text text-darken-2 tiny material-icons">info</i>
+                </td>
+                <td>
+                  <input type="number" min="0" name="items" id="bomb" value="0">
+                </td>
+                <td class="rightAlg">
+                  <input type="number" min="0" name="power" id="bomb" value="1"><span>HP/mes</span>
+                </td>
+                <td>
+                  <input type="number"  min="0" max="24" step="any" name="hours" id="bomb" value="3">
+                </td>
+                <td>
+                  {{bombTotal}}
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      
+      <div class="container">
+        <div class="row">
+          <div class="col m6">
+            <div class="input-field">
+              <select name="zone">
+                <option value="" disabled selected>Selecciona tu región</option>
+                <option>Región Metropolitana</option>
+                <option>XV Arica y Parinacota</option>
+                <option>I Tarapacá</option>
+                <option>II Antofagasta</option>
+                <option>III Atacama</option>
+                <option>IV Coquimbo</option>
+                <option>V Valparaíso</option>
+                <option>VI O'Higgins</option>
+                <option>VII Maule</option>
+                <option>VIII Biobío</option>
+                <option>IX La Araucanía</option>
+                <option>XIV Los Ríos</option>
+                <option>X Los Lagos</option>
+                <option>XI Aysén</option>
+                <option>XII Magallanes y Antártica</option>
+              </select>
+            </div>
+          </div>
+          <!--<div class="col m3 offset-m1">
+            <button class="btn waves-effect waves-light continue" type="button">Cotizar</button>
+          </div>-->
+          <div class="col m5 offset-m1">
+            <h4>Total: <span class="total">{{total}}</span> Wh/día</h4>
+          </div>
+        </div>
+      </div>
+      <hr>
+      
+      
+      <div class="container" id="leads-row">
+        <div class="col m9 l12">
+          <div class="row">
+            <h5 class="center-align form-title">¿A donde quiere que le enviemos su cotización?</h5>
+          </div>
+          <div class="row">
+            <div class="col m7 s12">
+              <div class="input-field">
+                <input id="name" type="text" name="cName" class="validate" required>
+                <label for="name">Nombre</label>
+              </div>
+              <div class="input-field">
+                <input id="email" type="email" name="email" class="validate" required>
+                <label for="email">Email</label>
+              </div>
+            </div>
+            <div class="col m5 s12">
+              <div class="input-field">
+                <input id="phone" type="text" name="phone" class="validate" required>
+                <label for="phone">Telefono</label>
+              </div>
+              <button class="btn waves-effect waves-light btn-large" data-transition-out="slideDownOut" data-transition-in="slideUpIn" type="submit">Obtener mi Cotización</button>
+            </div>
+          </div>
+          <div class="row">
+            <p class="center-align privacy">Nos tomamos muy enserio su privacidad y nunca compartiremos sus datos</p>
+          </div>
+          
+        </div>
+      </div>
+    </form>
+  </div>
+
+<div id="overlay" class="initial"></div>
+</template>

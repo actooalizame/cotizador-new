@@ -1,0 +1,325 @@
+<template name="singleOffGridReport">
+  <div class="transitions-container">
+    <div class="container single-offgrid">
+      <div class="row">
+        <header>
+          <h3 class="center-align">Cotización personalizada de instalación solar off-grid</h3>
+        </header>
+      </div>
+      <hr>
+      <div class="row">
+        <div class="col m6">
+          <h5>N° de Caso: <strong>{{caseNumber}}</strong></h5>
+          <h5>Nombre: <strong>{{cName}}</strong></h5>
+        </div>
+        <div class="col m6">
+          <h5>Gasto energético total: <strong>{{grandNum}}</strong> Wh/dia</h5>
+          <h5>Valor de paneles: <strong>{{equipment}} pesos + IVA</strong></h5>
+          <h5>Valor de instalación: <strong>{{instalation}} pesos + IVA</strong></h5>
+        </div>
+      </div>
+      <hr>
+      <div class="row">
+        <h5 class="center-align">Descargue su cotización y el detalle de los equipos <br><br><a href="http://enef.cl/cotizaciones/cotizacion-off-grid(COF{{pdfLead}}).pdf" class="btn waves-effect waves-light" download="Enef.pdf">Descargar PDF</a></h5>
+      </div>
+
+      <div class="row">
+        <div class="col s12 {{hideHelped}}">
+          <p class="center-align">¿Quiere que un ejecutivo lo contacte para asesorarlo en su proceso de compra? <i data-position="bottom" data-tooltip="Oprima ser contactado y un ejecutivo lo ayudara con sus dudas y requerimientos" class="tooltipped material-icons">live_help</i></p>
+          <div class="row">
+            <div class="col m2 offset-m4 offset-s3">
+              <button class="btn waves-effect waves-light contact-me" type="button">Si</button>
+            </div>
+            <div class="col m2">
+              <a href="http://enef.cl/landing/climatizacion.html" class="btn waves-effect waves-light red darken-3">No</a>
+            </div>
+          </div>
+          
+        </div>
+        <div class="col s12 {{showHelpedText}}">
+          <h5 class="center-align orange-text accent-4">{{helpedText}}</h5>
+        </div>
+      </div>
+      <hr>
+      <h3 class="center-align"><strong>
+        Detalle de su plan
+        </strong>
+      </h3>
+      <table class="bordered centered">
+        <thead>
+          <tr>
+            <th>Equipo</th>
+            <th>Potencia (W)</th>
+            <th>Unidades</th>
+            <th>Horas uso diario</th>
+            <th>Energia (Wh/dia)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Ampolleta Incandescente</td>
+            <td>
+              {{aincPower}}
+            </td>
+            <td>
+              {{aincUnits}}
+            </td>
+            <td>
+              {{aincHours}}
+            </td>
+            <td>
+              <p class="aincT">{{aincTotal}}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Ampolleta Eficiente</td>
+            <td>
+              {{aefPower}}
+            </td>
+            <td>
+              {{aefUnits}}
+            </td>
+            <td>
+              {{aefHours}}
+            </td>
+            <td>
+              <p class="aefT">{{aefTotal}}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Tubo Fluorescente</td>
+            <td>
+              {{tfluoPower}}
+            </td>
+            <td>
+              {{tfluoUnits}}
+            </td>
+            <td>
+              {{tfluoHours}}
+            </td>
+            <td>
+              <p class="tfluoT">{{tfluoTotal}}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Ampolleta LED</td>
+            <td>
+              {{ledPower}}
+            </td>
+            <td>
+              {{ledUnits}}
+            </td>
+            <td>
+              {{ledHours}}
+            </td>
+            <td>
+              <p class="ledT">{{ledTotal}}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Computador</td>
+            <td>
+              {{compuPower}}
+            </td>
+            <td>
+              {{compuUnits}}
+            </td>
+            <td>
+              {{compuHours}}
+            </td>
+            <td>
+              <p class="compuT">{{compuTotal}}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Notebook</td>
+            <td>
+              {{notePower}}
+            </td>
+            <td>
+              {{noteUnits}}
+            </td>
+            <td>
+              {{noteHours}}
+            </td>
+            <td>
+              <p class="noteT">{{noteTotal}}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Refrigerador</td>
+            <td>
+              {{refriPower}} <span>KWh/mes</span>
+            </td>
+            <td>
+              {{refriUnits}}
+            </td>
+            <td>
+              {{refriHours}}
+            </td>
+            <td>
+              <p class="refriT">{{refriTotal}}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Equipo de Música</td>
+            <td>
+              {{musicPower}}
+            </td>
+            <td>
+              {{musicUnits}}
+            </td>
+            <td>
+              {{musicHours}}
+            </td>
+            <td>
+              <p class="musicT">{{musicTotal}}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>TV</td>
+            <td>
+              {{tvPower}}
+            </td>
+            <td>
+              {{tvUnits}}
+            </td>
+            <td>
+              {{tvHours}}
+            </td>
+            <td>
+              <p class="tvT">{{tvTotal}}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>DVD / Bluray</td>
+            <td>
+              {{dvdPower}}
+            </td>
+            <td>
+              {{dvdUnits}}
+            </td>
+            <td>
+              {{dvdHours}}
+            </td>
+            <td>
+              <p class="dvdT">{{dvdTotal}}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Horno Eléctrico</td>
+            <td>
+              {{hornoPower}}
+            </td>
+            <td>
+              {{hornoUnits}}
+            </td>
+            <td>
+              {{hornoHours}}
+            </td>
+            <td>
+              <p class="hornoT">{{hornoTotal}}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Horno Microondas</td>
+            <td>
+              {{microPower}}
+            </td>
+            <td>
+              {{microUnits}}
+            </td>
+            <td>
+              {{microHours}}
+            </td>
+            <td>
+              <p class="microT">{{microTotal}}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Lavadora</td>
+            <td>
+              {{lavaPower}}
+            </td>
+            <td>
+              {{lavaUnits}}
+            </td>
+            <td>
+              {{lavaHours}}
+            </td>
+            <td>
+              <p class="lavaT">{{lavaTotal}}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Decodificador / Router</td>
+            <td>
+              {{aspiPower}}
+            </td>
+            <td>
+              {{aspiUnits}}
+            </td>
+            <td>
+              {{aspiHours}}
+            </td>
+            <td>
+              <p class="aspiT">{{aspiTotal}}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>{{other1Name}}</td>
+            <td>
+              {{other1Power}}
+            </td>
+            <td>
+              {{other1Units}}
+            </td>
+            <td>
+              {{other1Hours}}
+            </td>
+            <td>
+              <p class="other1T">{{other1Total}}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>{{other2Name}}</td>
+            <td>
+              {{other2Power}}
+            </td>
+            <td>
+              {{other2Units}}
+            </td>
+            <td>
+              {{other2Hours}}
+            </td>
+            <td>
+              <p class="other2T">{{other2Total}}</p>
+            </td>
+          </tr>
+          <tr>
+            <td>Bomba</td>
+            <td>
+              {{bombPower}}
+            </td>
+            <td>
+              {{bombUnits}}
+            </td>
+            <td>
+              {{bombHours}}
+            </td>
+            <td>
+              <p class="bombT">{{bombTotal}}</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <div class="row">
+        <div id="watermark">
+          <p>ENEF-Energías Eficientes / solar@enef.cl / www.enef.cl / +569 8982 0321 / +569 8505 8186 / La Pastora 121 Of. 402, Las Condes.</p>
+        </div>
+      </div>
+    </div>
+    
+  </div>
+  
+</template>
