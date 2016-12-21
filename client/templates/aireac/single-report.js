@@ -14,7 +14,9 @@ Template.singleAcReport.helpers({
       break;
       case 'C': var fileName = "18000";
       break;
-      case 'D': var fileName = "industrial";
+      case 'D': var fileName = "24000";
+      break;
+      case 'E': var fileName = "industrial";
       break;
     }
     return fileName;

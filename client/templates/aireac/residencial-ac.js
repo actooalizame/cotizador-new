@@ -46,8 +46,8 @@ Template.residencialAc.events({
 
 		if(data.calculation<=9000){
 			var plan = {
-						equipment: "307.648",
-						instalation: "81.230",
+						equipment: "242.222",
+						instalation: "146.154",
 						percentage: "10%",
 						totalDiscounted: "349.990",
 						category: "A"
@@ -56,8 +56,8 @@ Template.residencialAc.events({
 				}
 		if(data.calculation>9000 && data.calculation<=12000){
 			var plan = {
-					equipment: "353.900",
-					instalation: "81.770",
+					equipment: "274.444",
+					instalation: "146.154",
 					percentage: "11%",
 					totalDiscounted: "387.746",
 					category: "B"
@@ -65,20 +65,29 @@ Template.residencialAc.events({
 			}
 		if(data.calculation>12000 && data.calculation<=18000){
 			var plan = {
-					equipment: "475.095",
-					instalation: "81.839",
+					equipment: "407.778",
+					instalation: "146.154",
 					percentage: "12%",
 					totalDiscounted: "490.102",
 					category: "C"
 				}
 			}
-		if(data.calculation>18000){
+		if(data.calculation>18000 && data.calculation<=24000){
+			var plan = {
+					equipment: "546.667",
+					instalation: "146.154",
+					percentage: "13%",
+					totalDiscounted: "490.102",
+					category: "D"
+				}
+			}
+		if(data.calculation>24000){
 			var plan = {
 					equipment: "Consultar",
 					instalation: "Consultar",
 					percentage: "--",
 					totalDiscounted: "Consultar",
-					category: "D"
+					category: "E"
 				}
 			}
 		var contactEmail = data.email;
@@ -95,7 +104,7 @@ Template.residencialAc.events({
                   "Si tiene alguna inquietud o necesita mayor información reenvíe este correo a  solar@enef.cl y un ejecutivo lo contactará de inmediato." + "\n\n\n" +
                   "Saludos," + "\n\n" + 
                   "Equipo de Enef";
-    if(data.calculation>18000){
+    if(data.calculation>24000){
     	var message = "Estimado " +data.name+ "," + "\n\n" +
       								"Su proyecto excede el máximo predeterminado para nuestras cotizaciones automáticas on-line." + "\n\n" +
       								"Envíenos un correo a solar@enef.cl y le responderemos rápidamente para comenzar a asesorarlo de forma personalizada con su proyecto.";
