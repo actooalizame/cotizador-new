@@ -239,6 +239,7 @@ Meteor.methods({
 			name: data.name,
 			phone: data.phone,
 			email: data.email,
+			comment: data.comment,
 			calculation: data.calculation,
 			equipment: plan.equipment,
 			instalation: plan.instalation,

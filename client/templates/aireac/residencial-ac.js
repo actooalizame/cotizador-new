@@ -41,6 +41,7 @@ Template.residencialAc.events({
 				name: e.target.firstName.value,
 				phone: e.target.phone.value,
 				email: e.target.email.value,
+				comment: e.target.comment.value,
 				calculation: ((((ancho*largo*alto)*165)+(people*500))*lightPercentage).toFixed(1)
 			};
 
@@ -120,7 +121,7 @@ Template.residencialAc.events({
         return alert(error.reason);
       }
       else{
-        Meteor.call('sendEmail', to,from,subject,text);
+        //Meteor.call('sendEmail', to,from,subject,text);
         Session.set('contactEmail',contactEmail);
         Router.go('thanksAc');
       }

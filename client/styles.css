@@ -9,6 +9,10 @@ h5 {
 	font-weight: 300;
 }
 
+.label-sm {
+	font-size: 13px!important;
+}
+
 hr {
   display: block;
   height: 1px;
