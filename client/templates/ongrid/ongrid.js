@@ -28,9 +28,12 @@ Template.onGridReport.rendered = function() {
 };
 
 Template.onGridReport.helpers({
-	slider: function () {
+	'slider': function () {
     var slider = Session.get("slider");
     return slider;
+  },
+  'selectedRM': function () {
+    return Session.get('selectedRM');
   }
 });
 
@@ -39,8 +42,19 @@ Template.onGridReport.events({
     $('.lean-overlay').remove();
   },
 
+  'change .regiones': function(e){
+    var zone = e.target.value;
+    console.log(zone);
+    if(zone==='Región Metropolitana'){
+      Session.set('selectedRM', true);
+    }else{
+       Session.set('selectedRM', false)
+    }
+  },
+
   'submit .on-grid-form': function(e,t){
     e.preventDefault();
+
     var randomInt = Math.floor(Math.random()*100000000),
         caseNumber = randomInt.toString();
     var acSpend = e.target.acSpend.value,
@@ -51,6 +65,11 @@ Template.onGridReport.events({
         comment = e.target.comment.value,
         contactEmail = e.target.email.value,
         zone = e.target.zone.value;
+        if(Session.get('selectedRM')===true){
+          comuna = e.target.comuna.value
+        }else{
+          comuna = 'En Región'
+        };
     var percent = desiredSave*0.01,
         desiredKiloWats = montKwats*percent,
         desiredWats = (desiredKiloWats*1000).toFixed(0),
@@ -165,6 +184,7 @@ Template.onGridReport.events({
       comment: comment,
       contactEmail: contactEmail,
       zone: zone,
+      comuna: comuna,
       dailyRequiredWattsGeneration: dailyRequiredWattsGeneration, 
       zoneRad: zoneRad,
       dayZoneRadGen: dayZoneRadGen,

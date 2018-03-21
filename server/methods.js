@@ -51,6 +51,7 @@ Meteor.methods({
 			comment: data.comment,
 			contactEmail: data.contactEmail,
 			zone: data.zone,
+			comuna: data.comuna,
 			dailyRequiredWattsGeneration: data.dailyRequiredWattsGeneration,
 			zoneRad: data.zoneRad,
 			dayZoneRadGen: data.dayZoneRadGen,

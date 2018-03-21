@@ -48,7 +48,7 @@
           <div class="row">
             <div class="col m5 s11">
               <div class="input-field">
-    				    <select name="zone">
+    				    <select class="regiones" name="zone">
     				      <option value="" disabled selected>Selecciona tu región</option>
     				      <option>Región Metropolitana</option>
                   <option>XV Arica y Parinacota</option>
@@ -82,15 +82,33 @@
           <hr>
           <h5 class="form-title center-align">¿Dónde quiere que le enviemos su cotización?</h5>
           <div class="row">
-            <div class="col s11 m6 input-field">
-              <input id="name" type="text" name="firstName" class="validate" required>
-              <label for="name">Nombre completo</label>
-            </div>
+            {{#if selectedRM}}
+              <div class="col s11 m4 input-field">
+                <input id="name" type="text" name="firstName" class="validate" required>
+                <label for="name">Nombre completo</label>
+              </div>
+              
+              <div class="col s11 m4 input-field">
+                <input id="phone" type="text" name="phone" class="validate" required>
+                <label for="phone">Teléfono</label>
+              </div>
+
+              <div class="col s11 m4 input-field">
+                <input id="comuna" type="text" name="comuna" class="validate" required>
+                <label for="comuna">Comuna</label>
+              </div>
+            {{else}}
+              <div class="col s11 m6 input-field">
+                <input id="name" type="text" name="firstName" class="validate" required>
+                <label for="name">Nombre completo</label>
+              </div>
+              
+              <div class="col s11 m6 input-field">
+                <input id="phone" type="text" name="phone" class="validate" required>
+                <label for="phone">Teléfono</label>
+              </div>
+            {{/if}}
             
-            <div class="col s11 m6 input-field">
-              <input id="phone" type="text" name="phone" class="validate" required>
-              <label for="phone">Teléfono</label>
-            </div>
           </div>
 
           <div class="row">
