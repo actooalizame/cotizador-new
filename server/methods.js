@@ -48,6 +48,7 @@ Meteor.methods({
 			montKwats: data.montKwats,
 			name: data.name,
 			phone: data.phone,
+			comment: data.comment,
 			contactEmail: data.contactEmail,
 			zone: data.zone,
 			dailyRequiredWattsGeneration: data.dailyRequiredWattsGeneration,

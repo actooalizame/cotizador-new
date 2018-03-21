@@ -121,7 +121,7 @@ Template.residencialAc.events({
         return alert(error.reason);
       }
       else{
-        //Meteor.call('sendEmail', to,from,subject,text);
+        Meteor.call('sendEmail', to,from,subject,text);
         Session.set('contactEmail',contactEmail);
         Router.go('thanksAc');
       }

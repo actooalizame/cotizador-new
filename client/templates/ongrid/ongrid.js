@@ -48,6 +48,7 @@ Template.onGridReport.events({
         desiredSave = Session.get('slider'),
         name = e.target.firstName.value,
         phone = e.target.phone.value,
+        comment = e.target.comment.value,
         contactEmail = e.target.email.value,
         zone = e.target.zone.value;
     var percent = desiredSave*0.01,
@@ -161,6 +162,7 @@ Template.onGridReport.events({
       montKwats: montKwats,
       name: name,
       phone: phone,
+      comment: comment,
       contactEmail: contactEmail,
       zone: zone,
       dailyRequiredWattsGeneration: dailyRequiredWattsGeneration, 
