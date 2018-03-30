@@ -871,7 +871,7 @@ Template.offGridReport.events({
 				
 			}
 
-      var message = "Estimado " +cName+ "," + "\n\n" +
+      /*var message = "Estimado " +cName+ "," + "\n\n" +
       							"Su número de caso es el: "+caseNumber+ "\n" +
       							//"Su plan requiere la generación diaria de " +grandNum+ " Watts." + "\n" +
       							"Tomando en cuenta el factor de radiación solar de su región (" +zone+ "), se ha cotizado la instalación de un sistema fotovoltaico compuesto por paneles solares, regulador de carga, banco de baterías, inversor, estructuras, cables y conectores que podrá suminístrale energía a su hogar de forma autónoma las 24 horas del día." + "\n\n" +
@@ -883,22 +883,40 @@ Template.offGridReport.events({
                     "Si quiere revisar y descargar su cotización diríjase a la siguiente dirección: http://cotizadorsolar.cl/cotizacion-offgrid/"+caseNumber+ "\n\n" +
                     "Si tiene alguna inquietud o necesita mayor información reenvíe este correo a  solar@enef.cl y un ejecutivo lo contactará de inmediato." + "\n\n\n" +
                     "Saludos," + "\n\n" + 
-                    "Equipo de Enef";
+                    "Equipo de Enef";*/
+      var emailMsg = EmailConfigs.findOne({},{sort:{createdAt:-1}}),
+        emailText = emailMsg.emailBody;
+
+	    var mapObj = {
+	       cName,
+	       caseNumber,
+	       phone,
+	       zone,
+	       equipment,
+	       instalation,
+	       category,
+	       grandNum
+	    };
+	    var res = emailText.replace(/cName|caseNumber|phone|zone|equipment|instalation|category|grandNum/gi, function(matched){
+	      return mapObj[matched];
+	    });
+
       if((zoneReference==="norte"&&grandNum>21725)||(zoneReference==="centro"&&grandNum>16533)||(zoneReference==="sur"&&grandNum>8201)){
-				var message = "Estimado " +cName+ "," + "\n\n" +
+				var res = "Estimado " +cName+ "," + "\n\n" +
       								"Su proyecto excede el máximo predeterminado para nuestras cotizaciones automáticas on-line." + "\n\n" +
       								"Envíenos un correo a solar@enef.cl y le responderemos rápidamente para comenzar a asesorarlo de forma personalizada con su proyecto.";
       	var equipment = "Consultar",
       			instalation = "Consultar",
       			category = "solar-industrial"
 			}
-			
+
+
       var to = email,
         from = "solar@enef.cl",
         subject = "Cotizacion Online Enef",
-        text = message;						 
+        text = res;						 
 			if(zone===""){
-				alert('Selecciona tu zona!');
+				alert('Selecciona tu región!');
 				return;
 			}
 			
