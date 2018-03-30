@@ -160,11 +160,29 @@ Template.onGridReport.events({
                   "Saludos," + "\n\n\n" +
                   "Equipo de Enef";
     
+    var emailMsg = EmailConfigs.findOne({},{sort:{createdAt:-1}}),
+        emailText = emailMsg.emailBody;
+
+    var mapObj = {
+       name,
+       caseNumber,
+       phone,
+       zone,
+       equipment,
+       instalation,
+       dailyRequiredWattsGeneration,
+       suggestedPanels
+    };
+    var res = emailText.replace(/name|caseNumber|phone|zone|equipment|instalation|dailyRequiredWattsGeneration|suggestedPanels/gi, function(matched){
+      return mapObj[matched];
+    });
     
+
+
     var to = contactEmail,
         from = "solar@enef.cl",
         subject = "Cotizacion Online Enef",
-        text = message;
+        text = res;
 
     if(suggestedPanels>16){
       var instalation = "Consultar",

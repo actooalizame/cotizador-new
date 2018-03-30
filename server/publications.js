@@ -95,6 +95,10 @@ Meteor.publish('singleAdminOffGridReportPuerte', function(caseNumber){
   } 
   return Puerteoffgrid.find({caseNumber:caseNumber},{fields: dataFields});
 });
+
+Meteor.publish('emailConfigs', function(category){
+  return EmailConfigs.find({category});
+});
 /*
 Meteor.publish('singleOngridReport', function(reportId){
   return Ongridreports.find({_id:reportId});

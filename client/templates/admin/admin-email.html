@@ -1,0 +1,76 @@
+<template name="adminEmail">
+	<div class="row">
+		
+		<form class="col s12 m10 offset-m1 admin-email">
+      <div class="row">
+        <div class="col s11 m6">
+          <div class="input-field">
+				    <select class="category" name="category">
+				      <option value="" disabled selected>Selecciona categoría</option>
+				      <option>Climatizacion</option>
+              <option>Paneles On-Grid</option>
+              <option>Paneles Off-Grid</option>
+              
+				    </select>
+				  </div>
+        </div>
+        <div class="col s11 m6 input-field">
+          <input id="campaign" type="text" name="campaign" class="validate" required>
+          <label for="campaign">Campaña</label>
+        </div>
+        <!--<div class="col s11 m4">
+        	<p>Activo?</p>
+          <p>
+			      <input class="with-gap" name="group1" type="radio" id="test1"  />
+			      <label style="padding-left: 27px;" for="test1">Si</label>
+			      <input class="with-gap" name="group1" type="radio" id="test2" />
+			      <label style="padding-left: 27px;" for="test2">No</label>
+			    </p>
+			   
+        </div>-->
+      </div>
+      <div class="row">
+        <div class="col s11 m8 offset-m2 input-field">
+          <textarea name="emailBody" id="emailBody" class="validate materialize-textarea" required></textarea>
+          <label for="emailBody">Cuerpo del email</label>
+        </div>
+        <!--<div class="col m5">
+          <p class="privacy">Nos tomamos muy en serio su privacidad y nunca compartiremos sus datos</p>
+          </div>-->
+      </div>
+      <div class="center-align">
+        <p class="center-align"><small>* Utilizar los nombres de variables para crear cuerpo de email</small></p>
+        <a href="{{pathFor 'residencial'}}" class="btn waves-effect waves-light btn-large red darken-3" data-transition-out="roomUpOut" data-transition-in="roomUpIn">Volver</a>
+        <button class="btn waves-effect waves-light btn-large" type="submit" name="action">Crear</button>
+      </div>
+    </form>
+
+	</div>
+	<hr>
+	<div class="row">
+		<div class="col m6">
+			<h5>Nombre del cliente: name</h5>
+			<h5># de caso: caseNumber</h5>
+			<h5>Teléfono del cliente: phone</h5>
+			<h5>Región: zone</h5>
+			<h5>Valor de los equipos: equipment</h5>
+			<h5>Valor de instalación: instalation</h5>
+			<h5>Watts diarios requeridos: dailyRequiredWattsGeneration</h5>
+			<h5>Paneles Sugeridos: suggestedPanels</h5>
+		</div>
+		<div class="col m6"></div>
+			<p>Estimado name,
+				<br>
+				<br>
+				Su número de caso es: caseNumber.
+				<br><br>
+				Los valores corresponden a:<br>
+				- Equipos: equipment CLP.<br>
+				- Instalación: instalation CLP.<br>
+				<br>
+				Su plan requiere una generación diaria de dailyRequiredWattsGeneration Watts y la instalación de suggestedPanels paneles solares.
+				<br><br>
+				Si quiere revisar y descargar su cotización diríjase a la siguiente dirección: http://cotizadorsolar.cl/cotizacion-ongrid/caseNumber
+			</p>
+	</div>
+</template>

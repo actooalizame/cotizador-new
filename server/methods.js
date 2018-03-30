@@ -277,5 +277,13 @@ Meteor.methods({
 			{$set: {helped:true}}
 		);
 	},
+	'insertEmailConfig': function(data){
+		EmailConfigs.insert({
+			category: data.category,
+			campaign: data.campaign,
+			emailBody: data.emailBody,
+			createdAt: new Date()
+		});
+  },
 
 });
