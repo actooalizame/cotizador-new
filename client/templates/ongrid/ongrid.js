@@ -44,7 +44,6 @@ Template.onGridReport.events({
 
   'change .regiones': function(e){
     var zone = e.target.value;
-    console.log(zone);
     if(zone==='Región Metropolitana'){
       Session.set('selectedRM', true);
     }else{
@@ -160,7 +159,7 @@ Template.onGridReport.events({
                   "Saludos," + "\n\n\n" +
                   "Equipo de Enef";
     
-    var emailMsg = EmailConfigs.findOne({},{sort:{createdAt:-1}}),
+    var emailMsg = EmailConfigs.findOne({active:true},{sort:{createdAt:-1}}),
         emailText = emailMsg.emailBody;
 
     var mapObj = {

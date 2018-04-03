@@ -884,7 +884,7 @@ Template.offGridReport.events({
                     "Si tiene alguna inquietud o necesita mayor información reenvíe este correo a  solar@enef.cl y un ejecutivo lo contactará de inmediato." + "\n\n\n" +
                     "Saludos," + "\n\n" + 
                     "Equipo de Enef";*/
-      var emailMsg = EmailConfigs.findOne({},{sort:{createdAt:-1}}),
+      var emailMsg = EmailConfigs.findOne({active:true},{sort:{createdAt:-1}}),
         emailText = emailMsg.emailBody;
 
 	    var mapObj = {

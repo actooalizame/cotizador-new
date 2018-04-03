@@ -282,8 +282,14 @@ Meteor.methods({
 			category: data.category,
 			campaign: data.campaign,
 			emailBody: data.emailBody,
+			active: true,
 			createdAt: new Date()
 		});
   },
-
+  'toggleActiveEmail': function(thisId,isChecked){
+		EmailConfigs.update(
+			{ _id: thisId},
+			{$set: {active:isChecked}}
+		);
+	},
 });

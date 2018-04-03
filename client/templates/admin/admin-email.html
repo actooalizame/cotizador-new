@@ -1,4 +1,5 @@
 <template name="adminEmail">
+<div class="container" id="adminEmail">
 	<div class="row">
 		
 		<form class="col s12 m10 offset-m1 admin-email">
@@ -6,17 +7,23 @@
         <div class="col s11 m6">
           <div class="input-field">
 				    <select class="category" name="category">
+				    	{{#if hasSelected }}
+				    	<option value="" disabled selected>{{selectedPlan}}</option>
+              <option value="Paneles On-Grid">Paneles On-Grid</option>
+              <option value="Paneles Off-Grid">Paneles Off-Grid</option>
+              <option value="Climatizacion">Climatizacion</option>
+				    	{{else}}
 				      <option value="" disabled selected>Selecciona categoría</option>
-				      <option>Climatizacion</option>
-              <option>Paneles On-Grid</option>
-              <option>Paneles Off-Grid</option>
-              
+              <option value="Paneles On-Grid">Paneles On-Grid</option>
+              <option value="Paneles Off-Grid">Paneles Off-Grid</option>
+              <option value="Climatizacion">Climatizacion</option>
+              {{/if}}
 				    </select>
 				  </div>
         </div>
         <div class="col s11 m6 input-field">
           <input id="campaign" type="text" name="campaign" class="validate" required>
-          <label for="campaign">Campaña</label>
+          <label for="campaign">Título</label>
         </div>
         <!--<div class="col s11 m4">
         	<p>Activo?</p>
@@ -29,6 +36,7 @@
 			   
         </div>-->
       </div>
+
       <div class="row">
         <div class="col s11 m8 offset-m2 input-field">
           <textarea name="emailBody" id="emailBody" class="validate materialize-textarea" required></textarea>
@@ -47,30 +55,87 @@
 
 	</div>
 	<hr>
+	
 	<div class="row">
-		<div class="col m6">
-			<h5>Nombre del cliente: name</h5>
-			<h5># de caso: caseNumber</h5>
-			<h5>Teléfono del cliente: phone</h5>
-			<h5>Región: zone</h5>
-			<h5>Valor de los equipos: equipment</h5>
-			<h5>Valor de instalación: instalation</h5>
-			<h5>Watts diarios requeridos: dailyRequiredWattsGeneration</h5>
-			<h5>Paneles Sugeridos: suggestedPanels</h5>
+		<h4>Templates de {{selectedPlan}}</h4>
+		{{#if active1}}
+		
+			<div class="col m9">
+				
+				<ul class="collapsible">
+					{{#each emailConfigs}}
+				    <li>
+				      <div class="collapsible-header"><i class="material-icons" style="color:{{toggleColor}}">filter_vintage</i>{{campaign}}</div>
+				      <div class="collapsible-body">
+				      	<span>{{emailBody}}</span>
+								<hr>
+								<div class="switch">
+							    <label>
+							      Off
+							      <input type="checkbox" checked={{isChecked}} class="toggle-active">
+							      <span class="lever"></span>
+							      On
+							    </label>
+							  </div>
+				      </div>
+				    </li>
+				  {{/each}}
+				  </ul>
+			</div>
+
+			<div class="col m3">
+				<h5>Referencia:</h5>
+				<p>Nombre del cliente: name</p>
+				<p># de caso: caseNumber</p>
+				<p>Teléfono del cliente: phone</p>
+				<p>Región: zone</p>
+				<p>Valor de los equipos: equipment</p>
+				<p>Valor de instalación: instalation</p>
+				<p>Watts diarios requeridos: dailyRequiredWattsGeneration</p>
+				<p>Paneles Sugeridos: suggestedPanels</p>
+			</div>
+			
+		{{/if}}
+
+		{{#if active2}}
+			<div class="col m9">
+
+					<ul class="collapsible">
+					{{#each emailConfigs}}
+				    <li>
+				      <div class="collapsible-header"><i class="material-icons" style="color:{{toggleColor}}">filter_vintage</i>{{campaign}}</div>
+				      <div class="collapsible-body">
+				      	<span>{{emailBody}}</span>
+								<hr>
+								<div class="switch">
+							    <label>
+							      Off
+							      <input type="checkbox" checked={{isChecked}} class="toggle-active">
+							      <span class="lever"></span>
+							      On
+							    </label>
+							  </div>
+				      </div>
+				    </li>
+				  {{/each}}
+				  </ul>
+				
+			</div>
+			<div class="col m3">
+				<h5>Referencia:</h5>
+				<p>Nombre del cliente: cName</p>
+				<p># de caso: caseNumber</p>
+				<p>Teléfono del cliente: phone</p>
+				<p>Región: zone</p>
+				<p>Valor de los equipos: equipment</p>
+				<p>Valor de instalación: instalation</p>
+				<p>Categoria del plan: category</p>
+				<p>Watts Totales: grandNum</p>
+			</div>
+			
+		{{/if}}
 		</div>
-		<div class="col m6"></div>
-			<p>Estimado name,
-				<br>
-				<br>
-				Su número de caso es: caseNumber.
-				<br><br>
-				Los valores corresponden a:<br>
-				- Equipos: equipment CLP.<br>
-				- Instalación: instalation CLP.<br>
-				<br>
-				Su plan requiere una generación diaria de dailyRequiredWattsGeneration Watts y la instalación de suggestedPanels paneles solares.
-				<br><br>
-				Si quiere revisar y descargar su cotización diríjase a la siguiente dirección: http://cotizadorsolar.cl/cotizacion-ongrid/caseNumber
-			</p>
-	</div>
+	
+		
+</div>
 </template>

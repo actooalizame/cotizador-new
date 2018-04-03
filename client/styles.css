@@ -501,6 +501,14 @@ td.rightAlg {
 	background-color: #03a9f4;
 }
 
+#adminEmail .collapsible-body {
+	padding: 1em;
+}
+
+#adminEmail .collapsible-header {
+	font-weight: bold;
+}
+
 @media (max-width: 600px){
 	.ancholargo {
 		margin-top: 3.7em;
@@ -538,5 +546,11 @@ td.rightAlg {
 @media (max-width: 992px){
 	.contacto .form-title, .contacto-ac .form-title {
 		margin-left: 0;
+	}
+}
+
+@media only screen and (min-width: 993px) {
+	#adminEmail {
+		width: 78%;
 	}
 }
