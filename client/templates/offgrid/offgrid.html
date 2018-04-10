@@ -308,7 +308,7 @@
         <div class="row">
           <div class="col m6">
             <div class="input-field">
-              <select name="zone">
+              <select class="regiones" name="zone">
                 <option value="" disabled selected>Selecciona tu región</option>
                 <option>Región Metropolitana</option>
                 <option>XV Arica y Parinacota</option>
@@ -340,33 +340,65 @@
       
       
       <div class="container" id="leads-row">
-        <div class="col m9 l12">
+        <div class="">
           <div class="row">
             <h5 class="center-align form-title">¿A donde quiere que le enviemos su cotización?</h5>
           </div>
           <div class="row">
-            <div class="col m7 s12">
-              <div class="input-field">
+            {{#if selectedRM}}
+              <div class="col s11 m4 input-field">
                 <input id="name" type="text" name="cName" class="validate" required>
-                <label for="name">Nombre</label>
+                <label for="name">Nombre completo</label>
               </div>
-              <div class="input-field">
-                <input id="email" type="email" name="email" class="validate" required>
-                <label for="email">Email</label>
-              </div>
-            </div>
-            <div class="col m5 s12">
-              <div class="input-field">
+              
+              <div class="col s11 m4 input-field">
                 <input id="phone" type="text" name="phone" class="validate" required>
-                <label for="phone">Telefono</label>
+                <label for="phone">Teléfono</label>
               </div>
-              <button class="btn waves-effect waves-light btn-large" data-transition-out="slideDownOut" data-transition-in="slideUpIn" type="submit">Obtener mi Cotización</button>
+
+              <div class="col s11 m4 input-field">
+                <input id="comuna" type="text" name="comuna" required>
+                <label for="comuna">Comuna</label>
+              </div>
+            {{else}}
+              <div class="col s11 m6 input-field">
+                <input id="name" type="text" name="cName" class="validate" required>
+                <label for="name">Nombre completo</label>
+              </div>
+
+              <input id="comuna" name="comuna" type="hidden" value="En Region">
+
+              <div class="col s11 m6 input-field">
+                <input id="phone" type="text" name="phone" class="validate" required>
+                <label for="phone">Teléfono</label>
+              </div>
+            {{/if}}
+            
+          </div>
+
+          <div class="row">
+            <div class="col l7 m6 s12 input-field">
+              <textarea  id="comment" type="text" name="comment" class="validate materialize-textarea"></textarea>
+              <label for="comment">Comentarios adicionales</label>
+            </div>
+
+            <div class="col  s12 l5 m6 input-field">
+              <input id="email" type="email" name="email" class="validate" required>
+              <label for="email">Email donde enviaremos su cotización</label>
             </div>
           </div>
           <div class="row">
-            <p class="center-align privacy">Nos tomamos muy enserio su privacidad y nunca compartiremos sus datos</p>
+           
+            <div class="col l7 m6">
+              <p class="privacy">Nos tomamos muy en serio su privacidad y nunca compartiremos sus datos</p>
+            </div>
+            <div class="col l5 m6">
+              <a href="{{pathFor 'electric-home'}}" class="hide-on-small-only btn waves-effect waves-light btn-large red darken-3" data-transition-out="roomUpOut" data-transition-in="roomUpIn" style="margin-top: 1.4em;">Volver</a>
+              <button class="hide-on-small-only btn waves-effect waves-light btn-large" data-transition-out="slideDownOut" data-transition-in="slideUpIn" type="submit" name="action">Enviar</button>
+            </div>
           </div>
-          
+          <button class="hide-on-med-and-up right btn waves-effect waves-light btn-large" data-transition-out="slideDownOut" data-transition-in="slideUpIn" type="submit" name="action">Enviar</button>
+          <a href="{{pathFor 'electric-home'}}" class="hide-on-med-and-up right btn waves-effect waves-light btn-large red darken-3" data-transition-out="roomUpOut" data-transition-in="roomUpIn" style="margin-top: 1.4em;">Volver</a>
         </div>
       </div>
     </form>

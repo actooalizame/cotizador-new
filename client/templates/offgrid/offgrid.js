@@ -212,7 +212,10 @@ Template.offGridReport.helpers({
 		}
 		var total = ainc+aef+tfluo+led+compu+note+refri+music+tv+dvd+horno+micro+lava+aspi+other1+other2+bomb;
 		return total.toFixed(1);
-	}
+	},
+	'selectedRM': function () {
+    return Session.get('selectedRM');
+  }
 });
 
 Template.offGridReport.events({
@@ -563,6 +566,16 @@ Template.offGridReport.events({
 			Session.set('bombTotal', total);
 		}
 	},
+
+	'change .regiones': function(e){
+    var zone = e.target.value;
+    if(zone==='Región Metropolitana'){
+      Session.set('selectedRM', true);
+    }else{
+       Session.set('selectedRM', false)
+    }
+  },
+
 	'submit .off-grid-form': function(e){
 		e.preventDefault();
 		var randomInt = Math.floor(Math.random()*100000000),
@@ -570,8 +583,15 @@ Template.offGridReport.events({
 
 		var cName = e.target.cName.value,
 				phone = e.target.phone.value,
+				comment = e.target.comment.value,
 				email = e.target.email.value,
 				zone = e.target.zone.value;
+		if(e.target.comuna.value==undefined){
+			var comuna = 'Not';
+		}else{
+			var comuna = e.target.comuna.value;
+		}
+				
 		switch (zone) {
       case 'Región Metropolitana': var zoneReference = "centro";
       break;
@@ -923,8 +943,8 @@ Template.offGridReport.events({
 			else{
 				var data = {
 					equipment: equipment,instalation: instalation,category: category,
-					caseNumber: caseNumber,cName: cName,phone: phone,
-					email: email,aincPower: aincPower,aincUnits: aincUnits,
+					caseNumber: caseNumber,cName: cName,phone: phone,comment:comment,
+					email: email,comuna:comuna,aincPower: aincPower,aincUnits: aincUnits,
 					aincHours: aincHours,aincTotal: aincTotal,aefPower: aefPower,
 					aefUnits: aefUnits,aefHours: aefHours,aefTotal: aefTotal,
 					tfluoPower: tfluoPower,tfluoUnits: tfluoUnits,tfluoHours: tfluoHours,

@@ -76,6 +76,16 @@ Template.adminEmail.events({
       else{
         toastr["success"]("Template insertado exitosamente.", "Ok!");
         //Router.go('onGridReport');
+        var selectedPlan = Session.get('selectedPlan');
+        if(selectedPlan==='Paneles On-Grid'){
+          Router.go('onGridReport');
+        }
+        if(selectedPlan==='Paneles Off-Grid'){
+          Router.go('offGridReport');
+        }
+        if(selectedPlan==='Climatizacion'){
+          Router.go('residencialAc');
+        }
       }
     });
   },

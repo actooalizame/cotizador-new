@@ -79,6 +79,9 @@ Meteor.publish('singleAdminOffGridReport', function(caseNumber){
     'cName':1,
     'caseNumber': 1,
     'email': 1,
+    'phone': 1,
+    'comuna': 1,
+    'comment': 1,
     'userIp': 1,
     'createdAt':1
   } 
