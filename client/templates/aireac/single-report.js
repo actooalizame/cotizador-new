@@ -45,6 +45,16 @@ Template.singleAcReport.helpers({
     if(helped==true){
       return 'Hemos recibido su solicitud de asistencia, nos contactaremos a la brevedad';
     }
+  },
+  'btuExists': function(){
+    var reportId = this.caseNumber,
+        report = Acreports.findOne({caseNumber: reportId});
+
+    if(report.btu!==undefined){
+      return true;
+    } else {
+      return false;
+    }
   }
 });
 

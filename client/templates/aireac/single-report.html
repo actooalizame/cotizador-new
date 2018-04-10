@@ -12,7 +12,12 @@
 						<div class="col m4">
 							<h5>Nombre: <strong>{{name}}</strong></h5>
 							<h5>N° de Caso: <strong>{{caseNumber}}</strong></h5>
-							<h5>Cantidad de BTU: <strong>{{calculation}}</strong></h5>
+							{{#if btuExists}}
+							<h5>Cantidad de BTU: <strong>{{ btu }}</strong></h5>
+							{{else}}
+							<h5>Cantidad de BTU: <strong>{{ calculation }}</strong></h5>
+							{{/if}}
+							
 						</div>
 						<div class="col m8">
 							<h5>Valor de los equipos: <strong>{{equipment}} pesos + IVA</strong></h5>

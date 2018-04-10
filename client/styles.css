@@ -224,6 +224,16 @@ header h2 {
 	color: #03a9f4;
 }
 
+.container.clima .tabs .tab a {
+	color: #03a9f4;
+}
+
+.tabs .indicator {
+	background-color: #55caff;
+}
+
+
+
 .residencial h2 {
 	text-align: center;
 }
@@ -340,7 +350,7 @@ td > input {
   text-align: center;
 }
 
-.form-water, .on-grid-form, .ac-form {
+.form-water, .on-grid-form, .ac-form, .ac-form-2 {
 	margin-top: 1.5em;
 }
 
@@ -524,7 +534,7 @@ td.rightAlg {
 		/*font-size: 12px;*/
 	}
 
-	.ac-form {
+	.ac-form, .ac-form-2 {
 		margin-top: -2em;
 	}
 

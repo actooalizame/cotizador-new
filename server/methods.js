@@ -237,6 +237,7 @@ Meteor.methods({
 			largo: data.largo,
 			alto: data.alto,
 			people: data.people,
+			btu: data.btu,
 			building: data.building,
 			name: data.name,
 			phone: data.phone,
