@@ -22,6 +22,13 @@ Template.adminEmail.helpers({
       return false
     }
   },
+  'active3': function(){
+    if(Session.get('selectedPlan')==='Climatizacion'){
+      return true
+    } else {
+      return false
+    }
+  },
   'emailConfigs': function(){
     var selectedPlan = Session.get('selectedPlan');
     return EmailConfigs.find({category:selectedPlan},{sort:{createdAt:-1}});

@@ -71,10 +71,10 @@
 								<hr>
 								<div class="switch">
 							    <label>
-							      Off
+							      Inactivo
 							      <input type="checkbox" checked={{isChecked}} class="toggle-active">
 							      <span class="lever"></span>
-							      On
+							      Activo
 							    </label>
 							  </div>
 				      </div>
@@ -109,10 +109,10 @@
 								<hr>
 								<div class="switch">
 							    <label>
-							      Off
+							      Inactivo
 							      <input type="checkbox" checked={{isChecked}} class="toggle-active">
 							      <span class="lever"></span>
-							      On
+							      Activo
 							    </label>
 							  </div>
 				      </div>
@@ -131,6 +131,45 @@
 				<p>Valor de instalación: instalation</p>
 				<p>Categoria del plan: category</p>
 				<p>Watts Totales: grandNum</p>
+			</div>
+			
+		{{/if}}
+
+		{{#if active3}}
+			<div class="col m9">
+
+					<ul class="collapsible">
+					{{#each emailConfigs}}
+				    <li>
+				      <div class="collapsible-header"><i class="material-icons" style="color:{{toggleColor}}">filter_vintage</i>{{campaign}}</div>
+				      <div class="collapsible-body">
+				      	<span>{{emailBody}}</span>
+								<hr>
+								<div class="switch">
+							    <label>
+							      Inactivo
+							      <input type="checkbox" checked={{isChecked}} class="toggle-active">
+							      <span class="lever"></span>
+							      Activo
+							    </label>
+							  </div>
+				      </div>
+				    </li>
+				  {{/each}}
+				  </ul>
+				
+			</div>
+			<div class="col m3">
+				<h5>Referencia:</h5>
+				<p>Nombre del cliente: name</p>
+				<p># de caso: caseNumber</p>
+				<p>Teléfono del cliente: phone</p>
+				<p>Cantidad de b.t.u: btu</p>
+				<p>Tipo de inmueble: building</p>
+				<p>Valor de los equipos: equipment</p>
+				<p>Valor de instalación: instalation</p>
+				<p>Porcentaje de descuento: percentage</p>
+				<p>Valor con Descuento: totalDiscounted</p>
 			</div>
 			
 		{{/if}}

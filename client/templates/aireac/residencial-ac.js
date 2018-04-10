@@ -43,10 +43,10 @@ Template.residencialAc.events({
 				phone: e.target.phone.value,
 				email: e.target.email.value,
 				comment: e.target.comment.value,
-				calculation: ((((ancho*largo*alto)*165)+(people*500))*lightPercentage).toFixed(1)
+				btu: ((((ancho*largo*alto)*165)+(people*500))*lightPercentage).toFixed(1)
 			};
 
-		if(data.calculation<=9000){
+		if(data.btu<=9000){
 			var plan = {
 						equipment: "242.222",
 						instalation: "146.154",
@@ -56,7 +56,7 @@ Template.residencialAc.events({
 					}
 				
 				}
-		if(data.calculation>9000 && data.calculation<=12000){
+		if(data.btu>9000 && data.btu<=12000){
 			var plan = {
 					equipment: "274.444",
 					instalation: "146.154",
@@ -65,7 +65,7 @@ Template.residencialAc.events({
 					category: "B"
 				}
 			}
-		if(data.calculation>12000 && data.calculation<=18000){
+		if(data.btu>12000 && data.btu<=18000){
 			var plan = {
 					equipment: "407.778",
 					instalation: "146.154",
@@ -74,7 +74,7 @@ Template.residencialAc.events({
 					category: "C"
 				}
 			}
-		if(data.calculation>18000 && data.calculation<=24000){
+		if(data.btu>18000 && data.btu<=24000){
 			var plan = {
 					equipment: "546.667",
 					instalation: "146.154",
@@ -83,7 +83,7 @@ Template.residencialAc.events({
 					category: "D"
 				}
 			}
-		if(data.calculation>24000){
+		if(data.btu>24000){
 			var plan = {
 					equipment: "Consultar",
 					instalation: "Consultar",
@@ -93,9 +93,9 @@ Template.residencialAc.events({
 				}
 			}
 		var contactEmail = data.email;
-		var message = "Estimado " +data.name+ "," + "\n\n" +
+		/*var message = "Estimado " +data.name+ "," + "\n\n" +
 									"Su número de caso es el: " +data.caseNumber+ "\n" +
-									"Según los detalles de la habitación ingresada en nuestro cotizador, usted requiere de un equipo de climatización de " +data.calculation+ " BTU." + "\n\n" +
+									"Según los detalles de la habitación ingresada en nuestro cotizador, usted requiere de un equipo de climatización de " +data.btu+ " BTU." + "\n\n" +
 									//"Los valores corresponden a:" + "\n\n" +
       						//"- Equipos: " +plan.equipment+ " pesos + IVA" + "\n" +
       						//"- Instalación: " +plan.instalation+ " pesos + IVA" + "\n" +
@@ -105,17 +105,37 @@ Template.residencialAc.events({
                   "Si quiere revisar y descargar su cotización diríjase a la siguiente dirección:  http://cotizadorsolar.cl/cotizacion-climatizacion/" +data.caseNumber+ "\n\n" +
                   "Si tiene alguna inquietud o necesita mayor información reenvíe este correo a  solar@enef.cl y un ejecutivo lo contactará de inmediato." + "\n\n\n" +
                   "Saludos," + "\n\n" + 
-                  "Equipo de Enef";
-    if(data.calculation>24000){
-    	var message = "Estimado " +data.name+ "," + "\n\n" +
+                  "Equipo de Enef";*/
+    
+
+    var emailMsg = EmailConfigs.findOne({active:true},{sort:{createdAt:-1}}),
+        emailText = emailMsg.emailBody;
+
+    var mapObj = {
+       name: data.name,
+       caseNumber: data.caseNumber,
+       phone: data.phone,
+       btu: data.btu,
+       building: data.building,
+       equipment: plan.equipment,
+       instalation: plan.instalation,
+       percentage: plan.percentage,
+       totalDiscounted: plan.totalDiscounted
+    };
+    var res = emailText.replace(/name|caseNumber|phone|btu|building|equipment|instalation|percentage|totalDiscounted/gi, function(matched){
+      return mapObj[matched];
+    });
+    
+    if(data.btu>24000){
+    	var res = "Estimado " +data.name+ "," + "\n\n" +
       								"Su proyecto excede el máximo predeterminado para nuestras cotizaciones automáticas on-line." + "\n\n" +
       								"Envíenos un correo a solar@enef.cl y le responderemos rápidamente para comenzar a asesorarlo de forma personalizada con su proyecto.";
     }
-    
+
 		var to = contactEmail,
         from = "solar@enef.cl",
         subject = "Cotizacion Online Enef",
-        text = message;
+        text = res;
 
 		Meteor.call('insertAcReport', data, plan, function(error){
       if (error) {
@@ -183,7 +203,7 @@ Template.residencialAc.events({
 			}
 		
 		var contactEmail = data.email;
-		var message = "Estimado " +data.name+ "," + "\n\n" +
+		/*var message = "Estimado " +data.name+ "," + "\n\n" +
 									"Su número de caso es el: " +data.caseNumber+ "\n" +
 									"Según los detalles de la habitación ingresada en nuestro cotizador, usted requiere de un equipo de climatización de " +data.btu+ " BTU." + "\n\n" +
 									//"Los valores corresponden a:" + "\n\n" +
@@ -195,12 +215,30 @@ Template.residencialAc.events({
                   "Si quiere revisar y descargar su cotización diríjase a la siguiente dirección:  http://cotizadorsolar.cl/cotizacion-climatizacion/" +data.caseNumber+ "\n\n" +
                   "Si tiene alguna inquietud o necesita mayor información reenvíe este correo a  solar@enef.cl y un ejecutivo lo contactará de inmediato." + "\n\n\n" +
                   "Saludos," + "\n\n" + 
-                  "Equipo de Enef";
+                  "Equipo de Enef";*/
     
+    var emailMsg = EmailConfigs.findOne({active:true},{sort:{createdAt:-1}}),
+        emailText = emailMsg.emailBody;
+
+    var mapObj = {
+       name: data.name,
+       caseNumber: data.caseNumber,
+       phone: data.phone,
+       btu: data.btu,
+       building: data.building,
+       equipment: plan.equipment,
+       instalation: plan.instalation,
+       percentage: plan.percentage,
+       totalDiscounted: plan.totalDiscounted
+    };
+    var res = emailText.replace(/name|caseNumber|phone|btu|building|equipment|instalation|percentage|totalDiscounted/gi, function(matched){
+      return mapObj[matched];
+    });
+
 		var to = contactEmail,
         from = "solar@enef.cl",
         subject = "Cotizacion Online Enef",
-        text = message;
+        text = res;
 
 		Meteor.call('insertAcReport', data, plan, function(error){
       if (error) {
@@ -212,6 +250,5 @@ Template.residencialAc.events({
         Router.go('thanksAc');
       }
     });
-    
 	}
 });
